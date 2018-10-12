@@ -84,3 +84,33 @@ class Usuario (public var nombre: String){
     }
 
 }
+
+open class Animal (var nombre: String){
+}
+
+class Tortuga (nombre: String, var pesoCaparazon:Double):Animal(nombre){
+    init {
+        println("$nombre $pesoCaparazon")
+    }
+}
+    var animal = Animal ("Caballo")
+var George = Tortuga("George",12.5)
+
+class ejemplo{
+    constructor(){
+        println("estoy en el constructur")
+    }
+    init {
+        println("Edtoy en el init")
+    }
+}
+
+class BaseDatos{
+    companion object {
+        val Usuario:ArrayList<String> = ArrayList()
+        fun agregarUusario(nombre: String){
+            Usuario.add(nombre)
+        }
+    }
+
+}
