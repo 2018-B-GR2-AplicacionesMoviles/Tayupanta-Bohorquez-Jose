@@ -22,7 +22,7 @@ class ResultadoPropioActivity : AppCompatActivity() {
         intentRespuesta.putExtra("nombre", nombre)
         intentRespuesta.putExtra("apellido", apellido)
 
-        this.setResult(Main2Activity.requestCodeNombreApellido,intentRespuesta)
+        this.setResult(RESULT_OK,intentRespuesta)
 
         this.finish()
 
