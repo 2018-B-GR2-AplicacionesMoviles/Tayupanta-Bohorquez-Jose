@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_button.*
+import kotlinx.android.synthetic.main.activity_main2.*
 
 class Main2Activity : AppCompatActivity() {
 
@@ -15,10 +16,22 @@ class Main2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
+        val texto = intent.getStringExtra(Intent.EXTRA_TEXT)
+        Log.i("intente-texto", "texto: ${texto}")
         btn_enviar.setOnClickListener{
             this.enviarIntentRespuesta()
         }
+
+        btnResultadoPropio.setOnClickListener{
+            this.enviarIntentRespuestaPropia()
+        }
     }
+
+    fun enviarIntentRespuestaPropia(){
+        val intentRespuestaNombreApellido = Intent(this, ResultadoPropioActivity::class.java)
+        this.startActivityForResult(intentRespuestaNombreApellido, 102)
+    }
+
     fun enviarIntentRespuesta() {
         val intentRespuesta = Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
         this.startActivityForResult(intentRespuesta, requestCodeContactos);
@@ -59,5 +72,6 @@ class Main2Activity : AppCompatActivity() {
     }
     companion object {
         val requestCodeContactos = 101
+        val requestCodeNombreApellido = 102
     }
 }

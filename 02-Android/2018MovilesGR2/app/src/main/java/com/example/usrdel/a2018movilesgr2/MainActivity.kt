@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log
+import kotlinx.android.synthetic.main.activity_button.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,9 @@ class MainActivity : AppCompatActivity() {
                     */
                     this.irAPantallaDeBotones()
                 }
+        btnRespuesta.setOnClickListener{
+            this.enviarIntentRespuesta()
+        }
     }
 
     fun irAPantallaDeBotones() {

@@ -13,4 +13,12 @@
         android:text="Button"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="254dp" />
+
+    <Button
+        android:id="@+id/btnResultadoPropio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="382dp" />
 </android.support.constraint.ConstraintLayout>
