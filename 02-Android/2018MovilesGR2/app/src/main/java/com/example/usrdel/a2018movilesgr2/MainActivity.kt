@@ -35,14 +35,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun enviarIntentRespuesta(){
-        val intentRespuesta = Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.)
-        this.startActivityForResult(requestCode, resultCode,data)
+        val intentRespuesta = Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
+        this.startActivityForResult(intentRespuesta,101)
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        Log.i("intente-respuesta","requestCode:"$requestCode)
-    }
+
 
 }
