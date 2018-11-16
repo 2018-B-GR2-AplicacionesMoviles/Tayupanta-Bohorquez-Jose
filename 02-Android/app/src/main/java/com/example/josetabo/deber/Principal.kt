@@ -11,12 +11,15 @@ class Principal : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
         btn_siguiente.setOnClickListener{
-            this.irPantallaDos()
+            this.irActivityDos()
         }
     }
-
-    fun irPantallaDos (){
-        val intent = Intent(this, activityDos::class.java)
-        this.startActivity(intent)
+    fun irActivityDos(){
+        val intenUno = Intent(this, ActivityDos::class.java)
+        var usuario:String = txtUser.text.toString()
+        intenUno.putExtra("usuario", usuario)
+        this.startActivity(intenUno)
     }
+
+
 }
