@@ -7,6 +7,7 @@ import android.provider.ContactsContract
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_button.*
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,6 +43,23 @@ class MainActivity : AppCompatActivity() {
         val intentRespuesta = Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
         this.startActivityForResult(intentRespuesta,101)
 
+    }
+    fun irActividadIntent(){
+        val intentActividadIntent = Intent(
+                this, IntentActivity::class.java
+        )
+        val jose = Usuario(
+                "Jose",
+                27,
+                Date(1991, 2, 15),
+                12.00)
+        val savage = Mascota(
+                "savage",
+                jose
+        )
+        intentActividadIntent.putExtra("usuario", jose)
+        intentActividadIntent.putExtra("mascota", savage
+        )
     }
 
 
