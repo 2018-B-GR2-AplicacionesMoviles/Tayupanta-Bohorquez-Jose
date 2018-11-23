@@ -3,9 +3,7 @@ package com.example.usrdel.a2018movilesgr2
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.util.Log
-import kotlinx.android.synthetic.main.activity_button.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -26,42 +24,77 @@ class MainActivity : AppCompatActivity() {
                     */
                     this.irAPantallaDeBotones()
                 }
-        btnRespuesta.setOnClickListener{
-            this.enviarIntentRespuesta()
-        }
+        button_intent_respuesta
+                .setOnClickListener {
+                    this.irAPantallaDeIntentRespuesta()
+                }
+
+        button_ciclo_vida
+                .setOnClickListener {
+                    this.irAPantallaCicloVida()
+                }
+
+        button_intent_parcelable
+                .setOnClickListener {
+                    this.irActividadParcelableIntent()
+                }
+
+        button_adaptador
+                .setOnClickListener {
+                    this.irActividadAdaptador()
+                }
+    }
+
+    fun irActividadAdaptador() {
+        val intentAdaptador = Intent(
+                this,
+                AdaptadorActivity::class.java
+        )
+        startActivity(intentAdaptador)
+    }
+
+    fun irActividadParcelableIntent() {
+        val intentActividadIntent = Intent(
+                this,
+                ParcelableActivity::class.java
+        )
+
+        val adrian = Usuario(
+                "Adrian",
+                29,
+                Date(1989, 6, 10),
+                12.00)
+
+        val cachetes = Mascota("Cachetes", adrian)
+
+        intentActividadIntent.putExtra("usuario", adrian)
+        intentActividadIntent.putExtra("mascota", cachetes)
+
+        startActivity(intentActividadIntent)
+
+
+    }
+
+    fun irAPantallaCicloVida() {
+        val intentCicloVida = Intent(
+                this,
+                CicloVidaActivity::class.java
+        )
+        this.startActivity(intentCicloVida)
     }
 
     fun irAPantallaDeBotones() {
         // INTENT
         val intentIrABotones = Intent(this, ButtonActivity::class.java)
-        intentIrABotones.putExtra("nombre","Jose")
-        intentIrABotones.putExtra("apellido", "Tayupanta")
+        intentIrABotones.putExtra("nombre", "Adrian")
+        intentIrABotones.putExtra("apellido", "Eguez")
         this.startActivity(intentIrABotones)
     }
 
-    fun enviarIntentRespuesta(){
-        val intentRespuesta = Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
-        this.startActivityForResult(intentRespuesta,101)
-
+    fun irAPantallaDeIntentRespuesta() {
+        // INTENT
+        val intentRespuesta = Intent(this, IntentRespuestaActivity::class.java)
+        this.startActivity(intentRespuesta)
     }
-    fun irActividadIntent(){
-        val intentActividadIntent = Intent(
-                this, IntentActivity::class.java
-        )
-        val jose = Usuario(
-                "Jose",
-                27,
-                Date(1991, 2, 15),
-                12.00)
-        val savage = Mascota(
-                "savage",
-                jose
-        )
-        intentActividadIntent.putExtra("usuario", jose)
-        intentActividadIntent.putExtra("mascota", savage
-        )
-    }
-
-
 
 }

@@ -13,31 +13,41 @@ class ButtonActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_button)
-        this.capturaDatos()
-        act_but_nombre.text = "${this.nombre} ${this.apellido}"
 
-        btn_enviar.setOnClickListener{
-            enviarIntentCorreo()
-        }
+        this.capturarDatosDelIntent()
+
+        but_but_intent_implicito  // ID BOTON
+                .setOnClickListener {
+                    enviarIntentCorreo()
+                }
 
     }
-    fun capturaDatos(){
-        this. nombre = intent.getStringExtra("nombre")
+
+    fun capturarDatosDelIntent() {
+        this.nombre = intent.getStringExtra("nombre")
         this.apellido = intent.getStringExtra("apellido")
+        act_but_nombre_apellido
+                .text = "${nombre} ${apellido}"
     }
 
-    fun enviarIntentCorreo(){
-        val correo = correoEdit.text
-        val subject = subjectEdit.text
-        val text = textEdit.text
+    fun enviarIntentCorreo() {
+
+        val correo = but_input_correo.text
+        val subject = but_input_subject.text
+        val texto = but_input_texto.text
 
         val intent = Intent(Intent.ACTION_SEND)
+
         intent.type = "text/html"
-        intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(correo, "jose@jose.com"))
+
+        intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(correo, "a@a.com"))
         intent.putExtra(Intent.EXTRA_SUBJECT, subject)
-        intent.putExtra(Intent.EXTRA_TEXT, text)
+        intent.putExtra(Intent.EXTRA_TEXT, texto)
 
         startActivity(intent)
 
+
     }
+
+
 }
