@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\JoseTaBo\\Documents\\GitHub\\Tayupanta-Bohorquez-Jose-Moviles\\02-Android\\DeberIIB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rEC\\values-es-rEC.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\JoseTaBo\\Documents\\GitHub\\Tayupanta-Bohorquez-Jose-Moviles\\02-Android\\DeberIIB\\app\\src\\main\\res\\values-es-rEC\\textos.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endColumns": "51",
+                        "endOffsets": "104"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "51",
+                        "endOffsets": "102"
+                    }
+                }
+            ]
+        }
+    ]
+}

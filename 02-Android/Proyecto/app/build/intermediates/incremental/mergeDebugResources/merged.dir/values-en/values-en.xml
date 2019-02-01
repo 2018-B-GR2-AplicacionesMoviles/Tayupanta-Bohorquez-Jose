@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="textIngresar">Enter</string>
+    <string name="textLogin">Login</string>
+    <string name="textPassword">Password</string>
+    <string name="textSaludo">Welcome</string>
+    <string name="textUsuario">User</string>
+    <string name="textbBtnLogin">Login</string>
+    <string name="textbBtnNuevoUsuario">Add User</string>
+</resources>

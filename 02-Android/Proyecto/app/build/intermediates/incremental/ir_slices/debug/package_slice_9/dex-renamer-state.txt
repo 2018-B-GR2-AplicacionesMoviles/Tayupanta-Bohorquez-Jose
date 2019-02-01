@@ -1,0 +1,4 @@
+#Mon Jan 28 13:56:09 COT 2019
+base.0=C\:\\Users\\JoseTaBo\\Documents\\GitHub\\Tayupanta-Bohorquez-Jose-Moviles\\02-Android\\Proyecto\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\9
+path.0=classes.dex
+renamed.0=classes.dex
