@@ -22,11 +22,13 @@ class MainActivity : AppCompatActivity() {
     fun irCrear(){
         val intent = Intent(this, CrearActivity::class.java)
         this.startActivity(intent)
+
     }
 
     fun irListar(){
         val intentListar = Intent(this, ListarActivity::class.java)
         this.startActivity(intentListar)
+
     }
 
 }
